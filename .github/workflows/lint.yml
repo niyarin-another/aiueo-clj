@@ -27,7 +27,7 @@ jobs:
         SEPARATOR: ' '
     - name: echo output
       run: |
-          echo ${{ steps.git_diff.outputs.diff }}
+          echo ${{ github.event.pull_request.base.sha }}
     - uses: xcoo/clj-lint-action@v1.1.1
       with:
         linters: "\"all\""
