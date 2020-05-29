@@ -9,13 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: echo output
-      run: |
-          echo ${{ if (github.event_name == 'pull_request' ,github.event.pull_request.base.sha,github.event.before ) }}
     - uses: xcoo/clj-lint-action@v1.1.1
       with:
         linters: "\"all\""
         github_token: ${{ secrets.GITHUB_TOKEN }}
         runner: ":leiningen"
-        base_sha: ${{ github.event.pull_request.base.sha }}
+        base_sha: ${{ github.event.pull_request.base.sha||github.event.before }}
         eastwood_linters: "[:all]"
