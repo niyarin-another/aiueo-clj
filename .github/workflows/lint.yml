@@ -9,21 +9,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: piyo
-      id: getfile2
-      run: echo "::set-output name=files::$(git diff --name-only  | xargs)"
-    - name: get changed files
-      id: getfile
-      run: |
-          echo "::set-output name=files::$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | xargs)"
-    - uses: technote-space/get-diff-action@v1
-      id: git_diff
-      with:
-        SUFFIX_FILTER: .clj
-        SEPARATOR: ' '
+
+    - name: onpush
+      if: github.event_name == 'push'
+      env:
+          BASE_SHA: ${{ github.event.before }}
+    - name: onpull_request
+      if: github.event_name == 'pull_request'
+      env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
     - name: echo output
       run: |
-          echo ${{ github.event.pull_request.base.sha }}
+          echo ${{ BASE_SHA }}
     - uses: xcoo/clj-lint-action@v1.1.1
       with:
         linters: "\"all\""
