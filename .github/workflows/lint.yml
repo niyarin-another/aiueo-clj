@@ -9,6 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - name: echo
+      run: echo ${{ github.event.pull_request.base.sha||github.event.before }}
+
     - uses: xcoo/clj-lint-action@v1.1.1
       with:
         linters: "\"all\""
