@@ -11,8 +11,10 @@ jobs:
     - uses: actions/checkout@v2
     - name: echo
       run: echo ${{ github.event.pull_request.base.sha||github.event.before }}
-
-    - uses: xcoo/clj-lint-action@v1.1.1
+    - name :
+      if : ${{ GITHUB_REF#refs/heads/ == 'master' }}
+      run: echo ${{ github.event.before }}
+    - uses: xcoo/clj-lint-action@v1.1.2
       with:
         linters: "\"all\""
         github_token: ${{ secrets.GITHUB_TOKEN }}
