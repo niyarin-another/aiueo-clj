@@ -9,15 +9,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: echo
-      run: echo ${{ github.event.pull_request.base.sha||github.event.before }}
-    - name :
-      if : ${{ GITHUB_REF#refs/heads/ == 'master' }}
-      run: echo ${{ github.event.before }}
+    - name : master base sha
+      id : master_base_sha
+      if : github.ref  == 'refs/heads/master'
+      run: echo  "::set-output name=base_sha::${{ github.event.before }}"
+    - name : name2
+      run : echo ${{ steps.master_base_sha.outputs.base_sha }}
     - uses: xcoo/clj-lint-action@v1.1.2
       with:
         linters: "\"all\""
         github_token: ${{ secrets.GITHUB_TOKEN }}
         runner: ":leiningen"
-        base_sha: ${{ github.event.pull_request.base.sha||github.event.before }}
+        base_sha: ${{ github.event.pull_request.base.sha||secrets.GITHUB_TOKEN }}
         eastwood_linters: "[:all]"
