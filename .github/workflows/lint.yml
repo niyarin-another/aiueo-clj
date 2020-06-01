@@ -20,5 +20,5 @@ jobs:
         linters: "\"all\""
         github_token: ${{ secrets.GITHUB_TOKEN }}
         runner: ":leiningen"
-        base_sha: ${{ github.event.pull_request.base.sha||github.event.before }}
+        base_sha: ${{ github.event.pull_request.base.sha||secrets.GITHUB_TOKEN }}
         eastwood_linters: "[:all]"
