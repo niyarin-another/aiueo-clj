@@ -15,7 +15,7 @@ jobs:
       run: echo  "::set-output name=base_sha::${{ github.event.before }}"
     - name : name2
       run : echo ${{ steps.master_base_sha.outputs.base_sha }}
-    - uses: niyarin-another/clj-lint-action-1@d1.2.0
+    - uses: niyarin-another/clj-lint-action-1@d1.2.1
       with:
         linters: "\"all\""
         github_token: ${{ secrets.GITHUB_TOKEN }}
