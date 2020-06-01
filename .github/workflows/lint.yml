@@ -19,7 +19,7 @@ jobs:
       run : echo ${{ github.event.pull_request.base.sha }}
     - name : echo a
       run : echo ${{ github.event.pull_request.base.sha||steps.master_base_sha.outputs.base_sha}}
-    - uses: niyarin-another/clj-lint-action-1@d1.1.5
+    - uses: niyarin-another/clj-lint-action-1@d1.1.6
       with:
         linters: "\"all\""
         github_token: ${{ secrets.GITHUB_TOKEN }}
