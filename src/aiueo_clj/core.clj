@@ -2,7 +2,11 @@
 
 (defn bar 
 [x y z]
-"BAD COMMENT"
+"BAD COMMENT
+
+
+
+"
 (+ x 1))
 (defn- boooooo [x q]
     "piyo"
