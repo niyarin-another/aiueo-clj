@@ -6,6 +6,7 @@
 (+ x 1))
 (defn- boooooo [x q]
     "piyo"
+    "piyo2"
     (if  (= 0 0)
         (and x)))
 
