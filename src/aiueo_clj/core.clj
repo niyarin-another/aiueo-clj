@@ -2,10 +2,15 @@
 
 (defn bar 
 [x y z]
-"BAD COMMENT"
+"BAD COMMENT
+
+
+
+"
 (+ x 1))
 (defn- boooooo [x q]
     "piyo"
+    "piyo2"
     (if  (= 0 0)
         (and x)))
 
