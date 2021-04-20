@@ -14,20 +14,7 @@
   [x]
   (println x "Hello, World!"))
 
-
-
-
-
-
-
-
 'HELLO
 
 ;a
-
-
-
-
-
-
 
