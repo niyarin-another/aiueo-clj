@@ -1,10 +1,10 @@
 (ns aiueo-clj.core2)
 
-
 (defn bar2 
 [x y z]
 "BAD COMMENT"
 (+ x 1))
+
 
 (defn- boooooo [x q]
     "piyo"
@@ -16,6 +16,8 @@
   "I don't do a whole lot."
   [x]
   (println x "Hello, World!"))
+
+
 
 
 'HELLO2

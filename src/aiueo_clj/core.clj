@@ -1,15 +1,10 @@
 (ns aiueo-clj.core)
 
+"HELLO"
+
 (defn bar 
 [x y z]
 "BAD COMMENT
-
-
-
-
-
-
-
 
 
 "
