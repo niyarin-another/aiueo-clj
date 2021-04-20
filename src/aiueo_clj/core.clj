@@ -8,12 +8,6 @@
 
 
 
-
-
-
-
-
-
 "
 (+ x 1))
 (defn- boooooo [x q]
