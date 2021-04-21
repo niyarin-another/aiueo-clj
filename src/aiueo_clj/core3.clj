@@ -1,9 +1,12 @@
 (ns aiueo-clj.core3)
 
 (defn bar 
-[x y z]
+[x y z w]
+
 "BAD COMMENT"
+
 (+ x 1))
+
 
 
 (defn- boooooo [x q]
