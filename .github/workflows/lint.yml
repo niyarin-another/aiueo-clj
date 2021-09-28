@@ -13,7 +13,7 @@ jobs:
       id : master_base_sha
       if : github.ref  == 'refs/heads/master'
       run: echo  "::set-output name=base_sha::${{ github.event.before }}"
-    - uses: xcoo/clj-lint-action@fix/build
+    - uses: xcoo/clj-lint-action@721f5b94f2d064372c5afbcab31d3d00b6b06c7f
       with:
         linters: "[\"clj-kondo\" \"kibit\" \"eastwood\"]"
         github_token: ${{ secrets.GITHUB_TOKEN }}

@@ -8,6 +8,7 @@
 
 (defn- boooooo [x q]
     "piyo"
+    "aaaa!"
     (if  (= 0 0)
         (and x)))
 
