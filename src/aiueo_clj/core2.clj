@@ -4,6 +4,7 @@
 (defn bar2 
 [x y z]
 "BAD COMMENT"
+
 (+ x 1))
 
 (defn- boooooo [x q]
